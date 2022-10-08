@@ -10,6 +10,11 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" defer></script>
+
+    <script type="module" src="javascript/signupGoogleAuth.js"></script>
+
     <title>Register to Draw N Collab | Create and save drawings for free!</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
@@ -45,7 +50,7 @@
                 <p>or</p>
             </div>
 
-            <div class="google-login">
+            <button id="google-login">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M17.6644 10.1851C17.6644 9.54692 17.6071 8.93328 17.5008 8.34419H9.02441V11.8256H13.8681C13.6594 12.9506 13.0253 13.9037 12.0721 14.5419V16.8001H14.9808C16.6826 15.2333 17.6644 12.926 17.6644 10.1851Z"
@@ -60,8 +65,8 @@
                         d="M9.02344 4.56026C10.3448 4.56026 11.5312 5.01435 12.4639 5.90617L15.0453 3.3248C13.4866 1.87253 11.4493 0.980713 9.02344 0.980713C5.50526 0.980713 2.46162 2.99753 0.980713 5.93889L3.98753 8.27071C4.69526 6.14344 6.67935 4.56026 9.02344 4.56026Z"
                         fill="#EA4335" />
                 </svg>
-                <p>Login with Google</p>
-            </div>
+                <p>Signup with Google</p>
+            </button>
         </section>
     </main>
 </body>
