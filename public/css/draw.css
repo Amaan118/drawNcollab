@@ -32,8 +32,6 @@ header {
     border-bottom: 2px solid var(--light-ash-grey);
 }
 
-.draw-icon {}
-
 .profile-box {
     width: 20%;
     display: flex;
@@ -65,12 +63,13 @@ header {
 
 .main-page {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     min-height: 90vh;
     width: 100vw;
     padding: 0 4em;
     gap: 0 1rem;
+    position: relative;
 }
 
 .board {
@@ -84,8 +83,10 @@ header {
     justify-content: flex-start;
     align-items: center;
     flex-flow: column wrap;
-    height: 33em;
     gap: 2em 0;
+    position: absolute;
+    top: 5em;
+    right: 2em;
 }
 
 .user-menu {
@@ -160,22 +161,13 @@ header {
 }
 
 @media screen and (max-width:1000px) {
-
-    header {}
-
     .navbar {
         padding: 0 0.3em;
     }
 
-    .draw-icon {}
-
     .profile-box {
         width: 80%;
     }
-
-    .username {}
-
-    .profile-image {}
 
     .main-page {
         flex-direction: column;
@@ -194,9 +186,7 @@ header {
     .context-menu {
         width: 95%;
         margin: 0.5em 0;
+        top: 100%;
+        right: 0;
     }
-
-    .user-menu {}
-
-    .sketch-menu {}
 }
