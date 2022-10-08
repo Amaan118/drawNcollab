@@ -12,14 +12,15 @@ const upload = multer({ dest: "public/uploads/" });
 
 
 // These are Authentication Routes, each route having a controller attached to them
-const { renderRegisterPage, renderLoginPage, registerNewUser, loginUser, logoutUser, getColorNow } = require("../controllers/userAuth");
+const { renderRegisterPage, renderLoginPage, registerNewUser, loginUser, logoutUser, registerUserUsingGoogle, loginUserUsingGoogle } = require("../controllers/userAuth");
 router.get("/", renderLoginPage);
 router.get("/signup", renderRegisterPage);
 router.get("/login", renderLoginPage);
 router.post("/signup", registerNewUser);
 router.post("/login", loginUser);
 router.get("/logout", logoutUser);
-router.get("/color", getColorNow);
+router.post("/signup/google", registerUserUsingGoogle);
+router.post("/login/google", loginUserUsingGoogle);
 
 
 // These are Operations Controllers and Routes
