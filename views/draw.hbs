@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
+
+    <title>Collab N Draw | Draw and save paintings for Free!</title>
+
+    <script src="javascript/draw.js" defer></script>
+    <script src="javascript/collapse.js" defer></script>
+    <script src="/socket.io/socket.io.js"></script defer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+
+    <link rel="stylesheet" href="css/draw.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="draw-icon">
+                <svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.58887 21.5615V0.561523C5.67861 9.95626 14.2299 21.5615 18.6914 21.5615C23.153 21.5615 28.544 9.77205 30.5889 0.561523"
+                        stroke="#4F00C1" stroke-width="1.72401" />
+                </svg>
+            </div>
+            <div class="profile-box">
+                <p class="username">{{user.firstname}} {{user.lastname}}</p>
+                {{#if profile_img}}
+                <a href="/upload/profile">
+                    <img class="profile-image" src="{{profile_img}}" alt="Profile.jpg">
+                </a>
+                {{else}}
+                <a href="/upload/profile">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+                {{/if}}
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-page">
+        <aside class="board">
+            <canvas class="canvas-box" id="canvas"></canvas>
+        </aside>
+
+        <aside class="context-menu">
+            <div class="sketch-menu">
+                <p class="sketch-title">Sketches</p>
+                <span id="collapse-sketch">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.42426 12.0757C7.18995 11.8414 6.81005 11.8414 6.57574 12.0757C6.34142 12.3101 6.34142 12.6899 6.57574 12.9243L7.42426 12.0757ZM12 17.5L11.5757 17.9243L12 18.3485L12.4243 17.9243L12 17.5ZM17.4243 12.9243C17.6586 12.69 17.6586 12.3101 17.4243 12.0757C17.1899 11.8414 16.8101 11.8414 16.5757 12.0757L17.4243 12.9243ZM6.57574 12.9243L11.5757 17.9243L12.4243 17.0757L7.42426 12.0757L6.57574 12.9243ZM12.4243 17.9243L17.4243 12.9243L16.5757 12.0757L11.5757 17.0757L12.4243 17.9243Z"
+                            fill="#5D5D5D" />
+                        <path
+                            d="M7.42426 6.57574C7.18995 6.34142 6.81005 6.34142 6.57574 6.57574C6.34142 6.81005 6.34142 7.18995 6.57574 7.42426L7.42426 6.57574ZM12 12L11.5757 12.4243L12 12.8485L12.4243 12.4243L12 12ZM17.4243 7.42426C17.6586 7.18995 17.6586 6.81005 17.4243 6.57574C17.1899 6.34142 16.8101 6.34142 16.5757 6.57574L17.4243 7.42426ZM6.57574 7.42426L11.5757 12.4243L12.4243 11.5757L7.42426 6.57574L6.57574 7.42426ZM12.4243 12.4243L17.4243 7.42426L16.5757 6.57574L11.5757 11.5757L12.4243 12.4243Z"
+                            fill="#5D5D5D" />
+                    </svg>
+                </span>
+                {{#each sketches}}
+                <p class="account">Sketch {{@index}}</p>
+                {{/each}}
+
+                <form action="/add/sketch" method="post">
+                    <input type="hidden" name="image-input" value="">
+                    <button type="submit" class="account add-sketch" id="save">+ Add new
+                        Sketch</button>
+                </form>
+            </div>
+            <div class="user-menu">
+                <p class="account-title">Users</p>
+                <span id="collapse-accounts">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.42426 12.0757C7.18995 11.8414 6.81005 11.8414 6.57574 12.0757C6.34142 12.3101 6.34142 12.6899 6.57574 12.9243L7.42426 12.0757ZM12 17.5L11.5757 17.9243L12 18.3485L12.4243 17.9243L12 17.5ZM17.4243 12.9243C17.6586 12.69 17.6586 12.3101 17.4243 12.0757C17.1899 11.8414 16.8101 11.8414 16.5757 12.0757L17.4243 12.9243ZM6.57574 12.9243L11.5757 17.9243L12.4243 17.0757L7.42426 12.0757L6.57574 12.9243ZM12.4243 17.9243L17.4243 12.9243L16.5757 12.0757L11.5757 17.0757L12.4243 17.9243Z"
+                            fill="#5D5D5D" />
+                        <path
+                            d="M7.42426 6.57574C7.18995 6.34142 6.81005 6.34142 6.57574 6.57574C6.34142 6.81005 6.34142 7.18995 6.57574 7.42426L7.42426 6.57574ZM12 12L11.5757 12.4243L12 12.8485L12.4243 12.4243L12 12ZM17.4243 7.42426C17.6586 7.18995 17.6586 6.81005 17.4243 6.57574C17.1899 6.34142 16.8101 6.34142 16.5757 6.57574L17.4243 7.42426ZM6.57574 7.42426L11.5757 12.4243L12.4243 11.5757L7.42426 6.57574L6.57574 7.42426ZM12.4243 12.4243L17.4243 7.42426L16.5757 6.57574L11.5757 11.5757L12.4243 12.4243Z"
+                            fill="#5D5D5D" />
+                    </svg>
+                </span>
+                {{#each accounts}}
+                <div class="account-box">
+                    <span class="pen-color" style="background-color: {{this.color}}; color: {{this.color}}">o</span>
+                    <p class="account">{{this.firstname}} {{this.lastname}}</p>
+                </div>
+                {{/each}}
+                <div class="account-box">
+                    <span class="pen-color" style="background-color: {{user.color}}; color: {{user.color}}">o</span>
+                    <p class="account active-user">{{user.firstname}} {{user.lastname}}</p>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <footer>
+        <button id="clear">Clear</button>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
+
+    <title>Login to Draw N Collab | Create and save drawings for free!</title>
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+    <main class="container">
+        <span class="draw-curve">
+            <a href="/draw">
+                <svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.58887 21.5615V0.561523C5.67861 9.95626 14.2299 21.5615 18.6914 21.5615C23.153 21.5615 28.544 9.77205 30.5889 0.561523"
+                        stroke="#4F00C1" stroke-width="1.72401" />
+                </svg>
+            </a>
+        </span>
+
+        <section class="splash-box">
+            <div class="box-title">
+                <h1><span>Log in to Continue</span></h1>
+            </div>
+            <div class="login-box">
+                <form action="/login" method="post" class="data-form">
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="password" name="password" id="password" placeholder="Password">
+
+                    <a class="forgot-link" href="/password/forgot">Forgot Password?</a>
+
+                    <button type="submit" class="submit-form">Log In</button>
+                </form>
+            </div>
+
+            <div class="signup-box">
+                <p class="small-title">Don't have an account ? <a href="/signup">Sign up</a></p>
+                <p>or</p>
+            </div>
+
+            <div id="google-login">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.6644 10.1851C17.6644 9.54692 17.6071 8.93328 17.5008 8.34419H9.02441V11.8256H13.8681C13.6594 12.9506 13.0253 13.9037 12.0721 14.5419V16.8001H14.9808C16.6826 15.2333 17.6644 12.926 17.6644 10.1851Z"
+                        fill="#4285F4" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.02344 18.9811C11.4534 18.9811 13.4907 18.1752 14.9798 16.8006L12.0712 14.5424C11.2653 15.0824 10.2343 15.4015 9.02344 15.4015C6.67935 15.4015 4.69526 13.8183 3.98753 11.6911H0.980713V14.0229C2.46162 16.9642 5.50526 18.9811 9.02344 18.9811Z"
+                        fill="#34A853" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.9885 11.6904C3.8085 11.1504 3.70623 10.5736 3.70623 9.98044C3.70623 9.38726 3.8085 8.81044 3.9885 8.27044V5.93862H0.981687C0.372141 7.15362 0.0244141 8.52817 0.0244141 9.98044C0.0244141 11.4327 0.372141 12.8073 0.981687 14.0223L3.9885 11.6904Z"
+                        fill="#FBBC05" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.02344 4.56026C10.3448 4.56026 11.5312 5.01435 12.4639 5.90617L15.0453 3.3248C13.4866 1.87253 11.4493 0.980713 9.02344 0.980713C5.50526 0.980713 2.46162 2.99753 0.980713 5.93889L3.98753 8.27071C4.69526 6.14344 6.67935 4.56026 9.02344 4.56026Z"
+                        fill="#EA4335" />
+                </svg>
+                <p>Login with Google</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;500&display=swap');
+
+
+:root {
+    --primary-purple: #4F00C1;
+    --pure-white: #ffffff;
+    --ash-grey: #5D5D5D;
+    --light-ash-grey: #E2E2E2;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', cursive;
+}
+
+header {
+    min-height: 5vh;
+}
+
+.navbar {
+    min-height: 5vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    border-bottom: 2px solid var(--light-ash-grey);
+}
+
+.draw-icon {}
+
+.profile-box {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.username {
+    display: inline;
+}
+
+.profile-box ion-icon {
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px dashed black;
+    font-size: 1.6em;
+    cursor: pointer;
+    color: black;
+}
+
+.profile-image {
+    display: inline;
+    width: 1.5em;
+    border-radius: 50%;
+    height: 1.5em;
+}
+
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100vw;
+    padding: 0 4em;
+    gap: 0 1rem;
+}
+
+.board {
+    width: 80%;
+    border: 1px solid var(--light-ash-grey);
+}
+
+.context-menu {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column wrap;
+    height: 33em;
+    gap: 2em 0;
+}
+
+.user-menu {
+    width: 100%;
+    border: 1px solid var(--light-ash-grey);
+    position: relative;
+}
+
+.sketch-menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    border: 1px solid var(--light-ash-grey);
+    position: relative;
+}
+
+.sketch-title, .account-title {
+    border-bottom: 1px solid var(--light-ash-grey);
+    width: 100%;
+    padding: .5em .35em;
+}
+
+.add-sketch {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: 0.6em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: var(--pure-white);
+}
+
+.account-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.account {
+    padding: 0.5em 0.35em;
+    display: inline-block;
+}
+
+.active-user {
+    font-weight: 600;
+}
+
+.pen-color {
+    border-radius: 50%;
+    display: inline-block;
+    padding: 0.1rem 0.3rem;
+    margin-left: 0.5rem;
+    position: relative;
+    font-size: 0.5rem;
+}
+
+.canvas-box {
+    border: 2px solid var(--pure-white);
+    display: block;
+    background: var(--pure-white);
+}
+
+#collapse-sketch, #collapse-accounts {
+    position: absolute;
+    right: 0.3em;
+    top: 0.4em;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1000px) {
+
+    header {}
+
+    .navbar {
+        padding: 0 0.3em;
+    }
+
+    .draw-icon {}
+
+    .profile-box {
+        width: 80%;
+    }
+
+    .username {}
+
+    .profile-image {}
+
+    .main-page {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .canvas-box {
+        width: 100%;
+    }
+
+    .board {
+        width: 95%;
+        margin: 0.5em 0;
+    }
+
+    .context-menu {
+        width: 95%;
+        margin: 0.5em 0;
+    }
+
+    .user-menu {}
+
+    .sketch-menu {}
+}

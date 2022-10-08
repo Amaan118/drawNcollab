@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;500&display=swap');
+
+
+:root {
+    --primary-purple: #4F00C1;
+    --pure-white: #ffffff;
+    --ash-grey: #5D5D5D;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+    min-height: 95vh;
+    flex-flow: column;
+}
+
+.draw-curve {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    cursor: pointer;
+}
+
+.splash-box {
+    width: 40em;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.box-title {
+    margin-bottom: 2rem;
+}
+
+.box-title h1 span {
+    font-size: 36px;
+    color: var(--primary-purple);
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+
+form {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+input {
+    width: 70%;
+    padding: 0.5rem;
+    font-size: 14px;
+    border: 1px solid var(--ash-grey);
+    border-radius: 0.2rem;
+    outline: none;
+}
+
+input:hover, input:focus {
+    border-color: black;
+}
+
+.forgot-link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-purple);
+}
+
+.submit-form {
+    width: 70%;
+    padding: 0.5rem;
+    font-size: 16px;
+    background-color: var(--primary-purple);
+    border: none;
+    border-radius: .2rem;
+    color: var(--pure-white);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.signup-box {
+    width: 70%;
+    margin: auto;
+}
+
+.signup-box p {
+    padding: 0.5rem 0;
+}
+
+.small-title {
+    font-size: 16px;
+}
+
+.small-title a {
+    text-decoration: none;
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+#google-login {
+    width: 50%;
+    margin: auto;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--ash-grey);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    color: var(--ash-grey);
+    text-decoration: none;
+}
+
+#google-login p {
+    padding: 0 .5rem;
+    font-size: 16px;
+}
+
+
+@media screen and (max-width:1000px) {
+    .container {
+        width: 100vw;
+        min-height: 95vh;
+    }
+
+    .splash-box {
+        width: 25em;
+    }
+
+    .login-box {
+        width: 25em;
+    }
+
+
+    form {
+        width: 100%;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    .submit-form {
+        width: 80%;
+    }
+
+    #google-login {
+        width: 80%;
+    }
+}
